@@ -1,14 +1,11 @@
-import React from 'react';
+import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import Main from './src/Main';
 
-
-const App = () => {
+const Main = () => {
   return (
-    <NavigationContainer>
-      <Main />
-    </NavigationContainer>
+    <View style={styles.container}>
+      <Text>MainScreen</Text>
+    </View>
   );
 }
 
@@ -21,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Main;
