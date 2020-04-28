@@ -13,6 +13,7 @@ module.exports = {
     "plugin:import/warnings",
     "plugin:import/typescript",
     "airbnb",
+    "prettier",
   ],
   globals: {
     "Atomics": "readonly",

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { Text, View } from 'native-base';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import DrawerContent from './DrawerContent';
+import DrawerContent from './drawerContent';
 
 const Drawer = createDrawerNavigator();
 
@@ -15,7 +15,7 @@ const HomeScreen = () => {
 
 const RootNavigator = () => {
   return (
-    <Drawer.Navigator drawerContent={() => <DrawerContent />}>
+    <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props}/>}>
       <Drawer.Screen name="Home" component={HomeScreen} />
     </Drawer.Navigator>
   );
