@@ -1,16 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View } from 'native-base';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import DrawerContent from './DrawerContent';
 
 const Drawer = createDrawerNavigator();
-
-const DrawerContent = () => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Drawer Content</Text>
-    </View>
-  )
-}
 
 const HomeScreen = () => {
   return (
