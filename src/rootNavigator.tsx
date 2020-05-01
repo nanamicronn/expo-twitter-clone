@@ -1,22 +1,14 @@
-import React from "react";
-import { Text, View } from 'native-base';
+import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from './drawerContent';
+import FeedStack from './feedStack';
 
 const Drawer = createDrawerNavigator();
-
-const HomeScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-};
 
 const RootNavigator = () => {
   return (
     <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
-      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="FeedStack" component={FeedStack} />
     </Drawer.Navigator>
   );
 };

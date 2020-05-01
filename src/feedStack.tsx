@@ -4,7 +4,6 @@ import Feed from './feed';
 import Details from './details';
 
 const Stack = createStackNavigator();
-
 const FeedStack = () => {
   return (
     <Stack.Navigator initialRouteName="Feed">
