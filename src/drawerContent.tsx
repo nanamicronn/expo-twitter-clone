@@ -75,16 +75,27 @@ const DrawerContent = (props: Props) => {
               label={() => <Text style={styles.labelText}>モーメント</Text>}
               onPress={() => {}}
             />
+            <View style={styles.border}>
+              <DrawerItem
+                icon={() => (
+                  <Icon type="Feather" name="pie-chart" style={styles.icon} />
+                )}
+                label={() => (
+                  <View style={styles.switch}>
+                    <Text style={styles.switchText}>データセーバー</Text>
+                    <View>
+                      <Switch value />
+                    </View>
+                  </View>
+                )}
+                onPress={() => {}}
+              />
+            </View>
             <DrawerItem
               icon={() => (
-                <Icon type="Feather" name="pie-chart" style={styles.icon} />
+                <Icon type="Feather" name="log-out" style={styles.icon} />
               )}
-              label={() => (
-                <View style={styles.switch}>
-                  <Text style={styles.switchText}>データセーバー</Text>
-                  <Switch value />
-                </View>
-              )}
+              label={() => <Text style={styles.labelText}>ログアウト</Text>}
               onPress={() => {}}
             />
           </View>
@@ -99,7 +110,6 @@ export default DrawerContent;
 const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,
-    backgroundColor: 'red',
   },
   userInfoSection: {
     flex: 1,
@@ -153,13 +163,19 @@ const styles = StyleSheet.create({
     marginLeft: -18,
   },
   switch: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: 'blue',
-    marginVertical: 4,
+    alignItems: 'center',
   },
   switchText: {
     fontSize: 14,
     marginLeft: -18,
+    marginRight: 70,
+  },
+  border: {
+    borderTopColor: '#f7f7f7',
+    borderTopWidth: 1,
+    borderBottomColor: '#f7f7f7',
+    borderBottomWidth: 1,
   },
 });
