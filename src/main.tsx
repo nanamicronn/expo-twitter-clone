@@ -1,10 +1,8 @@
-import React from "react";
-import RootNavigator from "./rootNavigator";
+import React from 'react';
+import RootNavigator from './rootNavigator';
 
 const Main = () => {
-  return (
-    <RootNavigator />
-  );
-}
+  return <RootNavigator />;
+};
 
 export default Main;

@@ -1,12 +1,11 @@
 import React from 'react';
 import { StyleSheet, Image } from 'react-native';
-import { Text, View, Icon } from 'native-base';
+import { Text, View, Icon, Switch } from 'native-base';
 import {
   DrawerContentComponentProps,
   DrawerContentOptions,
   DrawerContentScrollView,
   DrawerItem,
-  Drawer,
 } from '@react-navigation/drawer';
 
 type Props = DrawerContentComponentProps<DrawerContentOptions>;
@@ -41,14 +40,62 @@ const DrawerContent = (props: Props) => {
               icon={() => (
                 <Icon type="Feather" name="user" style={styles.icon} />
               )}
-              label="Profile"
+              label={() => <Text style={styles.labelText}>プロフィール</Text>}
               onPress={() => {}}
             />
             <DrawerItem
-              icon={({ color, size }) => (
-                <Icon type="Feather" name="message-circle" />
+              icon={() => (
+                <Icon
+                  type="Feather"
+                  name="message-circle"
+                  style={styles.icon}
+                />
               )}
-              label="Profile"
+              label={() => <Text style={styles.labelText}>トピック</Text>}
+              onPress={() => {}}
+            />
+            <DrawerItem
+              icon={() => (
+                <Icon type="Feather" name="list" style={styles.icon} />
+              )}
+              label={() => <Text style={styles.labelText}>リスト</Text>}
+              onPress={() => {}}
+            />
+            <DrawerItem
+              icon={() => (
+                <Icon type="Feather" name="bookmark" style={styles.icon} />
+              )}
+              label={() => <Text style={styles.labelText}>ブックマーク</Text>}
+              onPress={() => {}}
+            />
+            <DrawerItem
+              icon={() => (
+                <Icon type="Feather" name="zap" style={styles.icon} />
+              )}
+              label={() => <Text style={styles.labelText}>モーメント</Text>}
+              onPress={() => {}}
+            />
+            <View style={styles.border}>
+              <DrawerItem
+                icon={() => (
+                  <Icon type="Feather" name="pie-chart" style={styles.icon} />
+                )}
+                label={() => (
+                  <View style={styles.switch}>
+                    <Text style={styles.switchText}>データセーバー</Text>
+                    <View>
+                      <Switch value />
+                    </View>
+                  </View>
+                )}
+                onPress={() => {}}
+              />
+            </View>
+            <DrawerItem
+              icon={() => (
+                <Icon type="Feather" name="log-out" style={styles.icon} />
+              )}
+              label={() => <Text style={styles.labelText}>ログアウト</Text>}
               onPress={() => {}}
             />
           </View>
@@ -63,7 +110,6 @@ export default DrawerContent;
 const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,
-    backgroundColor: 'red',
   },
   userInfoSection: {
     flex: 1,
@@ -110,6 +156,26 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   icon: {
-    fontSize: 20,
+    fontSize: 17,
+  },
+  labelText: {
+    fontSize: 14,
+    marginLeft: -18,
+  },
+  switch: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  switchText: {
+    fontSize: 14,
+    marginLeft: -18,
+    marginRight: 70,
+  },
+  border: {
+    borderTopColor: '#f7f7f7',
+    borderTopWidth: 1,
+    borderBottomColor: '#f7f7f7',
+    borderBottomWidth: 1,
   },
 });
